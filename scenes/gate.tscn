@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://crjqsjwl2q87i"]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_7al04"]
+[ext_resource type="Texture2D" uid="uid://b7uyvaiw3u4tm" path="res://art/character_standing.png" id="2_ivaad"]
+[ext_resource type="Texture2D" uid="uid://ga827cegsdyk" path="res://art/gate.png" id="3_2hrvm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgwip"]
+size = Vector2(44, 45)
+
+[sub_resource type="Animation" id="Animation_7oyed"]
+resource_name = "gate_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.13834, 1),
+"update": 0,
+"values": [Vector2(0, -22), Vector2(0, 26)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.13834, 1),
+"update": 0,
+"values": [Vector2(0, -22), Vector2(0, 26)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.13834, 1),
+"update": 0,
+"values": [Vector2(0, -18), Vector2(0, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_yljdl"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6tme"]
+_data = {
+"RESET": SubResource("Animation_yljdl"),
+"gate_animation": SubResource("Animation_7oyed")
+}
+
+[node name="Gate" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_7al04")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("2_ivaad")
+
+[node name="Gate" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("3_2hrvm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_fgwip")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e6tme")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

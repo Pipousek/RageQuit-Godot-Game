@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://btksbksinv6y2"]
+
+[ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_4ms07"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ms07")
+
+[node name="Level_1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 64.0
+offset_right = 149.0
+offset_bottom = 131.0
+text = "1"
+
+[node name="Level_2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 64.0
+offset_right = 246.0
+offset_bottom = 131.0
+text = "2"
+
+[connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level_2" to="." method="_on_level_2_pressed"]

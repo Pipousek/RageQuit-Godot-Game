@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1hpn0ss77mal"]
+
+[ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/gate.tscn" id="1_llxjb"]
+[ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/player.tscn" id="2_vufvm"]
+[ext_resource type="PackedScene" uid="uid://tqgrwkdljyph" path="res://scenes/spikes.tscn" id="3_w0mg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4667q"]
+size = Vector2(1000, 100)
+
+[sub_resource type="QuadMesh" id="QuadMesh_w0u1k"]
+size = Vector2(1000, 100)
+
+[node name="World2" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource("1_llxjb")]
+position = Vector2(940, 530)
+
+[node name="Player" parent="." instance=ExtResource("2_vufvm")]
+position = Vector2(308, 530)
+
+[node name="Spikes" parent="." instance=ExtResource("3_w0mg2")]
+position = Vector2(493, 524)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(583, 580)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_4667q")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+modulate = Color(0.57, 0.57, 0.57, 1)
+mesh = SubResource("QuadMesh_w0u1k")

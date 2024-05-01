@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctmp7o4ijahp2"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_gwghb"]
+[ext_resource type="Texture2D" uid="uid://b7uyvaiw3u4tm" path="res://art/character_standing.png" id="2_crd8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrk31"]
+size = Vector2(16, 36)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 30
+script = ExtResource("1_gwghb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("2_crd8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_rrk31")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
