@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dhueck8g07su6"]
+
+[ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/prefab/player.tscn" id="1_vkblx"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_ysiji"]
+[ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="2_of1l6"]
+[ext_resource type="PackedScene" uid="uid://ds5xwtjbwixmf" path="res://scenes/prefab/fallout_zone.tscn" id="3_isywk"]
+[ext_resource type="PackedScene" uid="uid://bb80ejp6p3y0w" path="res://scenes/prefab/side_wall.tscn" id="4_6g7ok"]
+[ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="6_ovs3g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_31alp"]
+size = Vector2(300, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb0ya"]
+size = Vector2(300, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jai2"]
+size = Vector2(28, 102)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ysiji")
+
+[node name="Gate" parent="." instance=ExtResource("2_of1l6")]
+position = Vector2(1071, 510)
+
+[node name="Player" parent="." instance=ExtResource("1_vkblx")]
+position = Vector2(122, 509)
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(215, 560)
+collision_layer = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.32, 0.32, 0.32, 1)
+scale = Vector2(1, 1.02)
+mesh = SubResource("QuadMesh_31alp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_eb0ya")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(967, 560)
+collision_layer = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
+modulate = Color(0.32, 0.32, 0.32, 1)
+scale = Vector2(1, 1.02)
+mesh = SubResource("QuadMesh_31alp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_eb0ya")
+
+[node name="FalloutZone" parent="." instance=ExtResource("3_isywk")]
+position = Vector2(580, 684)
+
+[node name="SideWall" parent="." instance=ExtResource("4_6g7ok")]
+position = Vector2(1170, 317)
+
+[node name="SideWall2" parent="." instance=ExtResource("4_6g7ok")]
+position = Vector2(-17, 322)
+
+[node name="ShiftPlatform2" type="Area2D" parent="."]
+position = Vector2(351, 458)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShiftPlatform2"]
+shape = SubResource("RectangleShape2D_1jai2")
+
+[node name="platform-parent" parent="." instance=ExtResource("6_ovs3g")]
+position = Vector2(580, 540)
+scale = Vector2(1.5, 1)
+
+[connection signal="body_entered" from="ShiftPlatform2" to="." method="_on_shift_platform_2_body_entered"]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED = 300.0
+@export var SPEED = 250.0
 @export var GRAVITY = 30
 @export var JUMP_VELOCITY = 450.0
 
@@ -49,11 +49,14 @@ func _physics_process(delta):
 		velocity.y = -JUMP_VELOCITY # Up means negative
 	
 	velocity.x = direction * SPEED
+	
+	if Input.is_action_just_pressed("escape_close_level"):
+		call_deferred("escape_to_main_menu")
 
 	move_and_slide()
 
 func _on_Timer_timeout():
 	isStanding = not isStanding
 
-func _on_fallout_zone_body_entered():
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+func escape_to_main_menu():
+	get_tree().change_scene_to_file("res://scenes/control.tscn")

@@ -7,6 +7,3 @@ func _change_scene():
 	var scene_path = get_tree().current_scene.scene_file_path
 	print(scene_path)
 	get_tree().change_scene_to_file(scene_path)
-
-func test():
-	print("D")

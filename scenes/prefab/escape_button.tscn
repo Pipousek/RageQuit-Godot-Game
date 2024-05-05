@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://q5v5cu784eqv"]
+
+[ext_resource type="Texture2D" uid="uid://cwr58gpxqxok0" path="res://art/escape_key.png" id="1_w8iui"]
+
+[sub_resource type="SystemFont" id="SystemFont_18asm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8t8yf"]
+font = SubResource("SystemFont_18asm")
+font_size = 12
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[node name="EscapeButton" type="TextureRect"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 118.0
+offset_bottom = 118.0
+texture = ExtResource("1_w8iui")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 98.0
+offset_bottom = 129.0
+text = "Press ESC to Exit 
+to Main Menu"
+label_settings = SubResource("LabelSettings_8t8yf")
+horizontal_alignment = 1
+vertical_alignment = 1
