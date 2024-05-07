@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://dls05waf83eoa"]
+
+[ext_resource type="Texture2D" uid="uid://c0kcklrmga2si" path="res://art/sawblade_00.png" id="1_8yeoj"]
+[ext_resource type="Script" path="res://scripts/sawblade.gd" id="1_iab6t"]
+[ext_resource type="Texture2D" uid="uid://c5fvfvov6eivo" path="res://art/sawblade_15.png" id="2_ypi1s"]
+[ext_resource type="Texture2D" uid="uid://jbdl3hj1g07" path="res://art/sawblade_30.png" id="3_i6gh5"]
+[ext_resource type="Texture2D" uid="uid://u2jmdyjo4b0m" path="res://art/sawblade_45.png" id="4_jvu4u"]
+[ext_resource type="Texture2D" uid="uid://nqul6khoico" path="res://art/sawblade_60.png" id="5_1q7so"]
+[ext_resource type="Texture2D" uid="uid://t6njpnksjadi" path="res://art/sawblade_75.png" id="6_ys7ia"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wxh2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8yeoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ypi1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i6gh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jvu4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1q7so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ys7ia")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34rwv"]
+radius = 26.0
+
+[node name="Sawblade" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_iab6t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_8wxh2")
+frame_progress = 0.515919
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_34rwv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

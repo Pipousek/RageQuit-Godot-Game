@@ -101,3 +101,5 @@ offset_bottom = 103.0
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level_2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level_3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Level_4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Level_5" to="." method="_on_level_5_pressed"]

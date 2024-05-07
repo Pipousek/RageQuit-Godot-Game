@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgmrjdh6gjqor"]
+
+[ext_resource type="PackedScene" uid="uid://dls05waf83eoa" path="res://scenes/prefab/sawblade.tscn" id="1_gqtgx"]
+[ext_resource type="AnimationLibrary" uid="uid://cflhrfmsf0faa" path="res://resources/animations/Global-animations.res" id="2_0uemy"]
+
+[node name="Sawblade-Parent" type="Node2D"]
+
+[node name="Sawblade" parent="." instance=ExtResource("1_gqtgx")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sawblade"]
+libraries = {
+"Global": ExtResource("2_0uemy")
+}
