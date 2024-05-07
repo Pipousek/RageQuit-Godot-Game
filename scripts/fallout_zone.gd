@@ -1,6 +1,6 @@
 extends Area2D
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	call_deferred("_change_scene")
 
 func _change_scene():

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cwr58gpxqxok0" path="res://art/escape_key.png" id="1_w8iui"]
 
 [sub_resource type="SystemFont" id="SystemFont_18asm"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_8t8yf"]
 font = SubResource("SystemFont_18asm")

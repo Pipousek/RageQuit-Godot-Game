@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var SPEED = 250.0
-@export var GRAVITY = 30
-@export var JUMP_VELOCITY = 450.0
+var SPEED = 250.0
+var GRAVITY = 30
+var JUMP_VELOCITY = 450.0
 
 var positionStanding = preload("res://art/character_standing.png")
 var positionRunLeft = preload("res://art/character_running_left.png")
@@ -16,7 +16,7 @@ func _ready():
 	$Timer.connect("timeout", self._on_Timer_timeout)
 	#$Timer.start()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
 	# move_left returns -1, move_right return 1, returns 0 otherwise
 	var direction = Input.get_axis("move_left", "move_right")
