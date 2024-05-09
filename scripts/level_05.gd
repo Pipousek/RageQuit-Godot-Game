@@ -5,13 +5,16 @@ var shifts = []
 const screenWidth = 1300
 
 func _ready():
-	for i in range(10):
+	for i in range(4):
 		shifts.append(false)
-	
-	var platform = $"Sawblade-Parent"
-	var anim_player = $"Sawblade-Parent/Sawblade/AnimationPlayer"
-	CustomAnimations.two_key_frames_with_time(platform, anim_player, [0,0,0], [screenWidth,0,5.0])
-	anim_player.connect("animation_finished", CustomAnimations._on_animation_finished.bind(platform))
+
+func _on_detect_area_4_body_entered(body):
+	if shifts[3] == false:
+		shifts[3] = true
+		var platform = $"Sawblade-Parent"
+		var anim_player = $"Sawblade-Parent/Sawblade/AnimationPlayer"
+		CustomAnimations.two_key_frames_with_time(platform, anim_player, [0,0,0], [screenWidth,0,5.0])
+		anim_player.connect("animation_finished", CustomAnimations._on_animation_finished.bind(platform))
 
 func _on_detect_area_body_entered(_body):
 	if shifts[0] == false:

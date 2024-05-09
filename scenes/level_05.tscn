@@ -30,6 +30,10 @@ position = Vector2(1169, 338)
 [node name="FalloutZone" parent="." instance=ExtResource("5_7rl4p")]
 position = Vector2(578, 684)
 
+[node name="DetectArea4" parent="." instance=ExtResource("8_jnptp")]
+position = Vector2(140, 154)
+scale = Vector2(0.2, 1)
+
 [node name="Sawblade-Parent" parent="." instance=ExtResource("8_mh6s0")]
 position = Vector2(-28, 191)
 
@@ -67,6 +71,7 @@ scale = Vector2(18, 1)
 position = Vector2(612, 413)
 scale = Vector2(18, 1)
 
+[connection signal="body_entered" from="DetectArea4" to="." method="_on_detect_area_4_body_entered"]
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_entered" from="DetectArea2" to="." method="_on_detect_area_2_body_entered"]
 [connection signal="body_entered" from="DetectArea3" to="." method="_on_detect_area_3_body_entered"]

@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://btksbksinv6y2"]
+[gd_scene load_steps=6 format=3 uid="uid://btksbksinv6y2"]
 
 [ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_4ms07"]
+[ext_resource type="Texture2D" uid="uid://d20a46p7yq5ij" path="res://art/background_start.png" id="2_6j46o"]
+[ext_resource type="Theme" uid="uid://bsur4k2a8h5e8" path="res://resources/button_default.tres" id="3_66ehd"]
+
+[sub_resource type="SystemFont" id="SystemFont_7wdhf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1u54i"]
+font = SubResource("SystemFont_7wdhf")
+font_size = 120
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -10,93 +20,113 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ms07")
+metadata/_edit_horizontal_guides_ = [255.0, 385.0]
+metadata/_edit_vertical_guides_ = [100.0, 620.0, 230.0, 360.0, 490.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 658.0
+texture = ExtResource("2_6j46o")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 165.0
+text = "RageQuit(?)"
+label_settings = SubResource("LabelSettings_1u54i")
+horizontal_alignment = 1
 
 [node name="Level_1" type="Button" parent="."]
-layout_mode = 0
-offset_left = 73.0
-offset_top = 64.0
-offset_right = 149.0
-offset_bottom = 131.0
+layout_mode = 2
+offset_left = 100.0
+offset_top = 255.0
+offset_right = 200.0
+offset_bottom = 355.0
+theme = ExtResource("3_66ehd")
 text = "1"
 
 [node name="Level_2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 173.0
-offset_top = 64.0
-offset_right = 249.0
-offset_bottom = 131.0
+layout_mode = 2
+offset_left = 230.0
+offset_top = 255.0
+offset_right = 330.0
+offset_bottom = 355.0
+theme = ExtResource("3_66ehd")
 text = "2"
 
 [node name="Level_3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 273.0
-offset_top = 64.0
-offset_right = 349.0
-offset_bottom = 131.0
+layout_mode = 2
+offset_left = 360.0
+offset_top = 255.0
+offset_right = 460.0
+offset_bottom = 355.0
+theme = ExtResource("3_66ehd")
 text = "3"
 
 [node name="Level_4" type="Button" parent="."]
-layout_mode = 0
-offset_left = 373.0
-offset_top = 64.0
-offset_right = 449.0
-offset_bottom = 131.0
+layout_mode = 2
+offset_left = 490.0
+offset_top = 255.0
+offset_right = 590.0
+offset_bottom = 355.0
+theme = ExtResource("3_66ehd")
 text = "4"
 
 [node name="Level_5" type="Button" parent="."]
-layout_mode = 0
-offset_left = 473.0
-offset_top = 64.0
-offset_right = 549.0
-offset_bottom = 131.0
+layout_mode = 2
+offset_left = 620.0
+offset_top = 255.0
+offset_right = 720.0
+offset_bottom = 355.0
+theme = ExtResource("3_66ehd")
 text = "5"
 
 [node name="Level_6" type="Button" parent="."]
-layout_mode = 0
-offset_left = 73.0
-offset_top = 164.0
-offset_right = 149.0
-offset_bottom = 231.0
+layout_mode = 2
+offset_left = 100.0
+offset_top = 385.0
+offset_right = 200.0
+offset_bottom = 485.0
+theme = ExtResource("3_66ehd")
 text = "6"
 
 [node name="Level_7" type="Button" parent="."]
-layout_mode = 0
-offset_left = 173.0
-offset_top = 164.0
-offset_right = 249.0
-offset_bottom = 231.0
+layout_mode = 2
+offset_left = 230.0
+offset_top = 385.0
+offset_right = 330.0
+offset_bottom = 485.0
+theme = ExtResource("3_66ehd")
 text = "7"
 
 [node name="Level_8" type="Button" parent="."]
-layout_mode = 0
-offset_left = 273.0
-offset_top = 164.0
-offset_right = 349.0
-offset_bottom = 231.0
+layout_mode = 2
+offset_left = 360.0
+offset_top = 385.0
+offset_right = 460.0
+offset_bottom = 485.0
+theme = ExtResource("3_66ehd")
 text = "8"
 
 [node name="Level_9" type="Button" parent="."]
-layout_mode = 0
-offset_left = 373.0
-offset_top = 164.0
-offset_right = 449.0
-offset_bottom = 231.0
+layout_mode = 2
+offset_left = 490.0
+offset_top = 385.0
+offset_right = 590.0
+offset_bottom = 485.0
+theme = ExtResource("3_66ehd")
 text = "9"
 
 [node name="Level_10" type="Button" parent="."]
-layout_mode = 0
-offset_left = 473.0
-offset_top = 164.0
-offset_right = 549.0
-offset_bottom = 231.0
+layout_mode = 2
+offset_left = 620.0
+offset_top = 385.0
+offset_right = 720.0
+offset_bottom = 485.0
+theme = ExtResource("3_66ehd")
 text = "10"
-
-[node name="Level_11" type="Button" parent="."]
-layout_mode = 0
-offset_left = 935.0
-offset_top = 36.0
-offset_right = 1011.0
-offset_bottom = 103.0
 
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level_2" to="." method="_on_level_2_pressed"]
