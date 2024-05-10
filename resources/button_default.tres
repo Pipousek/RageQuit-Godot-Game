@@ -1,22 +1,14 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bsur4k2a8h5e8"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bsur4k2a8h5e8"]
 
 [ext_resource type="Texture2D" uid="uid://bi4ctmjmv5u4h" path="res://art/button_default.png" id="1_3ynol"]
 [ext_resource type="Texture2D" uid="uid://bjgae4k5prjti" path="res://art/button_hover.png" id="1_k5gm5"]
+[ext_resource type="Texture2D" uid="uid://b5vsrh0patouf" path="res://art/button_locked.png" id="1_mfivk"]
 [ext_resource type="Texture2D" uid="uid://cpqaxyyhlat5l" path="res://art/button_pressed.png" id="2_0es0g"]
 
 [sub_resource type="SystemFont" id="SystemFont_uscg8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg5kn"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_735yy"]
+texture = ExtResource("1_mfivk")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncj0a"]
 content_margin_left = 4.0
@@ -50,12 +42,12 @@ texture = ExtResource("2_0es0g")
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0.8, 0.709804, 0, 1)
+Button/colors/font_pressed_color = Color(0.398245, 0.350431, 1.92523e-07, 1)
 Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
 Button/colors/icon_focus_color = Color(1, 1, 1, 1)
 Button/colors/icon_hover_color = Color(1, 1, 1, 1)
@@ -67,7 +59,7 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 50
 Button/fonts/font = SubResource("SystemFont_uscg8")
-Button/styles/disabled = SubResource("StyleBoxFlat_tg5kn")
+Button/styles/disabled = SubResource("StyleBoxTexture_735yy")
 Button/styles/focus = SubResource("StyleBoxFlat_ncj0a")
 Button/styles/hover = SubResource("StyleBoxTexture_q1q6w")
 Button/styles/normal = SubResource("StyleBoxTexture_lt5m3")

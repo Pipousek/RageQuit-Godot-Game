@@ -12,9 +12,17 @@ var positionJumpRight = preload("res://art/character_jumping_right.png")
 var isStanding = true
 var switchRunStand = 1.0
 
+const start_level_effect = preload("res://resources/start_level.mp3")
+const jump_bing = preload("res://resources/jump_bing.wav")
+const jump_bong = preload("res://resources/jump_bong.wav")
+var start_effect_played: bool
+
 func _ready():
 	$Timer.connect("timeout", self._on_Timer_timeout)
-	#$Timer.start()
+	start_effect_played = AudioPlayer.get_level_started()
+	if not start_effect_played:
+		AudioPlayer.set_level_started(true)
+		AudioPlayer.play_sound_effect(start_level_effect, 0)
 
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -47,6 +55,11 @@ func _physics_process(_delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -JUMP_VELOCITY # Up means negative
+		var sound_idx = randi() % 2
+		if sound_idx == 0:
+			AudioPlayer.play_sound_effect(jump_bing)
+		else:
+			AudioPlayer.play_sound_effect(jump_bong)
 	
 	velocity.x = direction * SPEED
 	

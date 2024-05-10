@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmwpx3ec51v8v"]
+
+[ext_resource type="Script" path="res://scripts/level_04.gd" id="1_8lr85"]
+[ext_resource type="PackedScene" uid="uid://q5v5cu784eqv" path="res://scenes/prefab/escape_button.tscn" id="2_o4jqy"]
+[ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="3_lhvb6"]
+[ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/prefab/player.tscn" id="4_k0ohq"]
+[ext_resource type="PackedScene" uid="uid://bb80ejp6p3y0w" path="res://scenes/prefab/side_wall.tscn" id="5_v07rg"]
+[ext_resource type="PackedScene" uid="uid://ds5xwtjbwixmf" path="res://scenes/prefab/fallout_zone.tscn" id="6_h45l3"]
+[ext_resource type="PackedScene" uid="uid://bo47qdnkp8vql" path="res://scenes/prefab/spikes_parent.tscn" id="7_3yswk"]
+[ext_resource type="PackedScene" uid="uid://c5temua38dqbd" path="res://scenes/prefab/detect_area.tscn" id="8_3pu78"]
+[ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="9_2wh7m"]
+
+[node name="Level_04" type="Node2D"]
+script = ExtResource("1_8lr85")
+
+[node name="EscapeButton" parent="." instance=ExtResource("2_o4jqy")]
+
+[node name="Gate" parent="." instance=ExtResource("3_lhvb6")]
+position = Vector2(1121, 491)
+
+[node name="Player" parent="." instance=ExtResource("4_k0ohq")]
+position = Vector2(17, 491)
+
+[node name="SideWall" parent="." instance=ExtResource("5_v07rg")]
+position = Vector2(-17, 338)
+
+[node name="SideWall2" parent="." instance=ExtResource("5_v07rg")]
+position = Vector2(1169, 338)
+
+[node name="FalloutZone" parent="." instance=ExtResource("6_h45l3")]
+position = Vector2(574, 684)
+
+[node name="Spikes-Parent" parent="." instance=ExtResource("7_3yswk")]
+position = Vector2(83, 485)
+
+[node name="Spikes-Parent2" parent="." instance=ExtResource("7_3yswk")]
+position = Vector2(203, 485)
+
+[node name="DetectArea" parent="." instance=ExtResource("8_3pu78")]
+position = Vector2(377, 425)
+
+[node name="Spikes-Parent3" parent="." instance=ExtResource("7_3yswk")]
+position = Vector2(403, 485)
+
+[node name="Spikes-Parent4" parent="." instance=ExtResource("7_3yswk")]
+position = Vector2(603, 485)
+
+[node name="DetectArea2" parent="." instance=ExtResource("8_3pu78")]
+position = Vector2(761, 425)
+
+[node name="Spikes-Parent5" parent="." instance=ExtResource("7_3yswk")]
+position = Vector2(803, 485)
+
+[node name="DetectArea3" parent="." instance=ExtResource("8_3pu78")]
+position = Vector2(955, 425)
+
+[node name="Spikes-Parent6" parent="." instance=ExtResource("7_3yswk")]
+position = Vector2(997, 498)
+
+[node name="Platform-Parent" parent="." instance=ExtResource("9_2wh7m")]
+position = Vector2(576, 536)
+scale = Vector2(19.2, 1)
+
+[connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_entered" from="DetectArea2" to="." method="_on_detect_area_2_body_entered"]
+[connection signal="body_entered" from="DetectArea3" to="." method="_on_detect_area_3_body_entered"]

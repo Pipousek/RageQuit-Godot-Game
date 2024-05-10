@@ -8,7 +8,7 @@ func _ready():
 	for i in range(4):
 		shifts.append(false)
 
-func _on_detect_area_4_body_entered(body):
+func _on_detect_area_4_body_entered(_body):
 	if shifts[3] == false:
 		shifts[3] = true
 		var platform = $"Sawblade-Parent"

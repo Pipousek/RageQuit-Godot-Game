@@ -3,6 +3,8 @@ extends Node2D
 var shifts = []
 
 func _ready():
+	AudioPlayer.play_music_level()
+	
 	for i in range(3):
 		shifts.append(false)
 

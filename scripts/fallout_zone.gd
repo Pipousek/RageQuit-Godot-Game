@@ -1,6 +1,9 @@
 extends Area2D
 
+const audio_fallout = preload("res://resources/fallout_enter.mp3")
+
 func _on_body_entered(_body):
+	AudioPlayer.play_sound_effect(audio_fallout, 0)
 	call_deferred("_change_scene")
 
 func _change_scene():
