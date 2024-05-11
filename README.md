@@ -123,5 +123,5 @@ We use sounds that Donald Trump made to give the game a funny vibe so you don't 
 
 ## Team
 
-Petr Nagy
-Mikuláš Mikeska
+- Petr Nagy
+- Mikuláš Mikeska
