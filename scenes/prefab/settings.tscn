@@ -62,6 +62,7 @@ metadata/_edit_vertical_guides_ = [576.0]
 metadata/_edit_horizontal_guides_ = [324.0]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = -1.0
 offset_right = 1152.0
@@ -76,12 +77,14 @@ offset_right = 976.0
 offset_bottom = 526.0
 
 [node name="TextureRect" type="TextureRect" parent="SettingsPanel"]
+layout_mode = 0
 offset_right = 800.0
 offset_bottom = 400.0
 texture = ExtResource("1_bcldr")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="SettingsPanel"]
+layout_mode = 0
 offset_left = 284.0
 offset_top = 11.0
 offset_right = 517.0
@@ -90,6 +93,7 @@ text = "Settings"
 label_settings = SubResource("LabelSettings_0miiv")
 
 [node name="MusicLabel" type="Label" parent="SettingsPanel"]
+layout_mode = 0
 offset_left = 298.0
 offset_top = 102.0
 offset_right = 501.0
@@ -98,6 +102,7 @@ text = "Music Volume"
 label_settings = SubResource("LabelSettings_2isq0")
 
 [node name="EffectsLabel" type="Label" parent="SettingsPanel"]
+layout_mode = 0
 offset_left = 292.0
 offset_top = 226.0
 offset_right = 508.0
@@ -106,6 +111,7 @@ text = "Effects Volume"
 label_settings = SubResource("LabelSettings_2isq0")
 
 [node name="EffectsSlider" type="HSlider" parent="SettingsPanel"]
+layout_mode = 0
 offset_left = 209.0
 offset_top = 269.0
 offset_right = 594.0
@@ -114,6 +120,7 @@ theme = ExtResource("2_0rlw2")
 value = 30.0
 
 [node name="MusicSlider" type="HSlider" parent="SettingsPanel"]
+layout_mode = 0
 offset_left = 208.0
 offset_top = 146.0
 offset_right = 593.0
@@ -122,6 +129,7 @@ theme = ExtResource("2_0rlw2")
 value = 30.0
 
 [node name="ColorRect" type="ColorRect" parent="SettingsPanel"]
+layout_mode = 0
 offset_left = 612.0
 offset_top = 144.0
 offset_right = 685.0
@@ -132,7 +140,20 @@ position = Vector2(37, 32)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ckqs2")
 
+[node name="EffectRect" type="ColorRect" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 268.0
+offset_right = 685.0
+offset_bottom = 333.0
+
+[node name="EffectSpeaker" type="AnimatedSprite2D" parent="SettingsPanel/EffectRect"]
+position = Vector2(37, 32)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ckqs2")
+
 [node name="ExitButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
 offset_left = 752.0
 offset_top = 10.0
 offset_right = 844.0
@@ -142,5 +163,6 @@ theme = ExtResource("2_0rlw2")
 text = "X"
 icon = SubResource("CanvasTexture_68h38")
 
+[connection signal="value_changed" from="SettingsPanel/EffectsSlider" to="." method="_on_effects_slider_value_changed"]
 [connection signal="value_changed" from="SettingsPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="SettingsPanel/ExitButton" to="." method="_on_exit_button_pressed"]

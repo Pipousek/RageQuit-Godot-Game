@@ -21,10 +21,22 @@ func _on_music_slider_value_changed(value):
 	else:
 		$SettingsPanel/ColorRect/AudioSpeaker.frame = 3
 
+func _on_effects_slider_value_changed(value):
+	SaveLoadState.set_effects_music_level(value)
+	if 33 > value and value > 0:
+		$SettingsPanel/EffectRect/EffectSpeaker.frame = 2
+	elif 66 > value and value >= 33:
+		$SettingsPanel/EffectRect/EffectSpeaker.frame = 1
+	elif value >= 66:
+		$SettingsPanel/EffectRect/EffectSpeaker.frame = 0
+	else:
+		$SettingsPanel/EffectRect/EffectSpeaker.frame = 3
+
 func show_me():
 	Engine.time_scale = 0
 	SaveLoadState.load_game()
 	
+	$SettingsPanel/EffectsSlider.value = SaveLoadState.get_effects_music_level()
 	$SettingsPanel/MusicSlider.value = SaveLoadState.get_background_music_level()
 	AudioPlayer.play_music_level()
 	AudioPlayer.set_music_volume($SettingsPanel/MusicSlider.value)

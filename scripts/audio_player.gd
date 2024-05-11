@@ -18,6 +18,8 @@ func set_music_volume(value):
 	volume_db = lerp(-60, 10, value/100.0)
 
 func play_sound_effect(effect_stream: AudioStream, effect_volume_db = 0.0):
+	var effect_volume = SaveLoadState.get_effects_music_level()
+	effect_volume_db = lerp(-60, 10, effect_volume/100.0)
 	var effect_player = AudioStreamPlayer.new()
 	effect_player.stream = effect_stream
 	effect_player.name = stream.resource_path
@@ -26,7 +28,7 @@ func play_sound_effect(effect_stream: AudioStream, effect_volume_db = 0.0):
 	effect_player.play()
 	
 	await effect_player.finished
-	effect_player.queue_free()	
+	effect_player.queue_free()
 
 func get_level_started():
 	return _level_started
