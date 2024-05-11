@@ -57,6 +57,3 @@ func _get_list_buttons():
 		$Level_9,
 		$Level_10
 	]
-
-func _on_settings_pressed():
-	$Settings.show_me()
