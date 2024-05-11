@@ -3,6 +3,7 @@ extends CharacterBody2D
 var SPEED = 250.0
 var GRAVITY = 30
 var JUMP_VELOCITY = 450.0
+var SWAP_DIRECTION = 1
 
 var positionStanding = preload("res://art/character_standing.png")
 var positionRunLeft = preload("res://art/character_running_left.png")
@@ -28,7 +29,9 @@ func _physics_process(_delta):
 	if not Settings.get_is_showed():
 		# Get the input direction and handle the movement/deceleration.
 		# move_left returns -1, move_right return 1, returns 0 otherwise
+		#var direction = Input.get_axis("move_left", "move_right")
 		var direction = Input.get_axis("move_left", "move_right")
+		direction *= SWAP_DIRECTION
 		
 		# Add the gravity.
 		if not is_on_floor():
@@ -40,12 +43,12 @@ func _physics_process(_delta):
 			if velocity.y > 2000:
 				velocity.y = 2000
 		else:
-			if direction == -1:
+			if direction== -1:
 				if isStanding:
 					$Sprite2D.texture = positionStanding
 				else:
 					$Sprite2D.texture = positionRunLeft
-			elif direction == 1:
+			elif direction== 1:
 				if isStanding:
 					$Sprite2D.texture = positionStanding
 				else:

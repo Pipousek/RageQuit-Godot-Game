@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1rcdg1ule36s"]
+
+[ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="1_p2cjx"]
+[ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/prefab/player.tscn" id="2_ou8ls"]
+[ext_resource type="PackedScene" uid="uid://bb80ejp6p3y0w" path="res://scenes/prefab/side_wall.tscn" id="3_3gas6"]
+[ext_resource type="PackedScene" uid="uid://ds5xwtjbwixmf" path="res://scenes/prefab/fallout_zone.tscn" id="4_bb6lk"]
+[ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="5_3cfh1"]
+[ext_resource type="PackedScene" uid="uid://q5v5cu784eqv" path="res://scenes/prefab/escape_button.tscn" id="6_0tupj"]
+[ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="7_jjiea"]
+
+[node name="Level_9" type="Node2D"]
+
+[node name="Gate" parent="." instance=ExtResource("1_p2cjx")]
+position = Vector2(1106, 517)
+
+[node name="Player" parent="." instance=ExtResource("2_ou8ls")]
+position = Vector2(92, 220)
+
+[node name="SideWall" parent="." instance=ExtResource("3_3gas6")]
+position = Vector2(-17, 338)
+
+[node name="SideWall2" parent="." instance=ExtResource("3_3gas6")]
+position = Vector2(1169, 338)
+
+[node name="FalloutZone" parent="." instance=ExtResource("4_bb6lk")]
+position = Vector2(578, 684)
+
+[node name="Platform-Parent" parent="." instance=ExtResource("5_3cfh1")]
+position = Vector2(576, 561)
+scale = Vector2(19.2, 1)
+
+[node name="EscapeButton" parent="." instance=ExtResource("6_0tupj")]
+
+[node name="SettingsButton" parent="." instance=ExtResource("7_jjiea")]
+offset_left = 1080.0
+offset_top = 10.0
+offset_right = 1205.0
+offset_bottom = 135.0

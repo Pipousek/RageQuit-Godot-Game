@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://cb3kvqprnagir"]
+
+[ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="1_qvjq4"]
+[ext_resource type="Script" path="res://scripts/level_6.gd" id="1_umtlk"]
+[ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/prefab/player.tscn" id="2_03gth"]
+[ext_resource type="PackedScene" uid="uid://bb80ejp6p3y0w" path="res://scenes/prefab/side_wall.tscn" id="3_k4dlc"]
+[ext_resource type="PackedScene" uid="uid://ds5xwtjbwixmf" path="res://scenes/prefab/fallout_zone.tscn" id="4_l1qvs"]
+[ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="5_ptt61"]
+[ext_resource type="PackedScene" uid="uid://q5v5cu784eqv" path="res://scenes/prefab/escape_button.tscn" id="6_2ak73"]
+[ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="7_3lgic"]
+[ext_resource type="PackedScene" uid="uid://c5temua38dqbd" path="res://scenes/prefab/detect_area.tscn" id="9_b3mx2"]
+[ext_resource type="PackedScene" uid="uid://bo47qdnkp8vql" path="res://scenes/prefab/spikes_parent.tscn" id="10_vx4l1"]
+[ext_resource type="PackedScene" uid="uid://dgmrjdh6gjqor" path="res://scenes/prefab/sawblade_parent.tscn" id="10_wr1mu"]
+
+[node name="Level_6" type="Node2D"]
+script = ExtResource("1_umtlk")
+
+[node name="Gate" parent="." instance=ExtResource("1_qvjq4")]
+position = Vector2(1106, 517)
+
+[node name="Player" parent="." instance=ExtResource("2_03gth")]
+position = Vector2(37, 516)
+
+[node name="SideWall" parent="." instance=ExtResource("3_k4dlc")]
+position = Vector2(-17, 338)
+
+[node name="SideWall2" parent="." instance=ExtResource("3_k4dlc")]
+position = Vector2(1169, 338)
+
+[node name="FalloutZone" parent="." instance=ExtResource("4_l1qvs")]
+position = Vector2(578, 684)
+
+[node name="EscapeButton" parent="." instance=ExtResource("6_2ak73")]
+
+[node name="SettingsButton" parent="." instance=ExtResource("7_3lgic")]
+offset_left = 1080.0
+offset_top = 10.0
+offset_right = 1205.0
+offset_bottom = 135.0
+
+[node name="DetectArea" parent="." instance=ExtResource("9_b3mx2")]
+position = Vector2(942, 450)
+scale = Vector2(0.3, 1)
+
+[node name="Spikes-Parent" parent="." instance=ExtResource("10_vx4l1")]
+position = Vector2(1008, 523)
+
+[node name="Sawblade-Parent" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(134, 298)
+
+[node name="Sawblade-Parent2" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(279, 298)
+
+[node name="Sawblade-Parent3" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(405, 298)
+
+[node name="Sawblade-Parent4" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(509, 298)
+
+[node name="Sawblade-Parent5" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(628, 298)
+
+[node name="Sawblade-Parent6" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(758, 298)
+
+[node name="Sawblade-Parent7" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(881, 298)
+
+[node name="Sawblade-Parent8" parent="." instance=ExtResource("10_wr1mu")]
+position = Vector2(1031, 298)
+
+[node name="Platform-Parent" parent="." instance=ExtResource("5_ptt61")]
+position = Vector2(576, 561)
+scale = Vector2(19.2, 1)
+
+[node name="Platform-Parent2" parent="." instance=ExtResource("5_ptt61")]
+position = Vector2(576, 279)
+scale = Vector2(19.2, 1)
+
+[connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://btksbksinv6y2"]
+[gd_scene load_steps=7 format=3 uid="uid://btksbksinv6y2"]
 
 [ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_4ms07"]
 [ext_resource type="Texture2D" uid="uid://d20a46p7yq5ij" path="res://art/background_start.png" id="2_6j46o"]
 [ext_resource type="Theme" uid="uid://bsur4k2a8h5e8" path="res://resources/button_default.tres" id="3_66ehd"]
+[ext_resource type="PackedScene" uid="uid://53nkgklop38c" path="res://scenes/prefab/settings.tscn" id="6_jq7v2"]
 
 [sub_resource type="SystemFont" id="SystemFont_7wdhf"]
 
@@ -136,9 +137,17 @@ offset_right = 943.0
 offset_bottom = 608.0
 text = "Settings"
 
+[node name="Settings" parent="." instance=ExtResource("6_jq7v2")]
+layout_mode = 1
+
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level_2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level_3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Level_4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="Level_5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Level_6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Level_7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="Level_8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="Level_9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="Level_10" to="." method="_on_level_10_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_pressed"]

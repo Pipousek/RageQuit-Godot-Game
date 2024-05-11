@@ -135,8 +135,8 @@ sprite_frames = SubResource("SpriteFrames_ckqs2")
 [node name="ExitButton" type="Button" parent="SettingsPanel"]
 offset_left = 752.0
 offset_top = 10.0
-offset_right = 877.0
-offset_bottom = 135.0
+offset_right = 844.0
+offset_bottom = 102.0
 scale = Vector2(0.3, 0.3)
 theme = ExtResource("2_0rlw2")
 text = "X"

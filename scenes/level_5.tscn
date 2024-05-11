@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvguv5o1xsh4y"]
+[gd_scene load_steps=11 format=3 uid="uid://dvguv5o1xsh4y"]
 
-[ext_resource type="Script" path="res://scripts/level_05.gd" id="1_hgks3"]
+[ext_resource type="Script" path="res://scripts/level_5.gd" id="1_hgks3"]
 [ext_resource type="PackedScene" uid="uid://q5v5cu784eqv" path="res://scenes/prefab/escape_button.tscn" id="2_rcq81"]
 [ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="3_d1vrl"]
 [ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/prefab/player.tscn" id="4_klb85"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5temua38dqbd" path="res://scenes/prefab/detect_area.tscn" id="7_8ujkj"]
 [ext_resource type="PackedScene" uid="uid://dgmrjdh6gjqor" path="res://scenes/prefab/sawblade_parent.tscn" id="8_8lsrc"]
 [ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="9_avojo"]
+[ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="10_fmtt2"]
 
 [node name="Level_05" type="Node2D"]
 script = ExtResource("1_hgks3")
@@ -75,6 +76,12 @@ position = Vector2(576, 117)
 scale = Vector2(19.2, 1)
 
 [node name="EscapeButton" parent="." instance=ExtResource("2_rcq81")]
+
+[node name="SettingsButton" parent="." instance=ExtResource("10_fmtt2")]
+offset_left = 1080.0
+offset_top = 10.0
+offset_right = 1205.0
+offset_bottom = 135.0
 
 [connection signal="body_entered" from="DetectArea4" to="." method="_on_detect_area_4_body_entered"]
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]

@@ -3,10 +3,6 @@ extends Node2D
 var shifts = []
 
 func _ready():
-	print(Settings.get_is_showed())
-	Settings.show_me()
-	print(Settings.get_is_showed())
-	
 	AudioPlayer.play_music_level()
 	
 	for i in range(3):

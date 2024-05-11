@@ -2,17 +2,12 @@ extends Control
 
 var _is_showed = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	print("VOLE")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	self._hide_me()
 
 func _on_exit_button_pressed():
 	_is_showed = false
-	self.hide()
+	self._hide_me()
 
 func _on_music_slider_value_changed(value):
 	SaveLoadState.set_background_music_level(value)
@@ -27,6 +22,7 @@ func _on_music_slider_value_changed(value):
 		$SettingsPanel/ColorRect/AudioSpeaker.frame = 3
 
 func show_me():
+	Engine.time_scale = 0
 	SaveLoadState.load_game()
 	
 	$SettingsPanel/MusicSlider.value = SaveLoadState.get_background_music_level()
@@ -35,6 +31,18 @@ func show_me():
 	
 	_is_showed = true
 	self.show()
+	self.move_to_front()
+
+func _hide_me():
+	Engine.time_scale = 1	
+	SaveLoadState.load_game()
+	
+	$SettingsPanel/MusicSlider.value = SaveLoadState.get_background_music_level()
+	AudioPlayer.play_music_level()
+	AudioPlayer.set_music_volume($SettingsPanel/MusicSlider.value)
+	
+	_is_showed = false
+	self.hide()
 
 func get_is_showed():
 	return _is_showed

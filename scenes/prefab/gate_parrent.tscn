@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2gyb7rup24up"]
+
+[ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="1_3paph"]
+[ext_resource type="AnimationLibrary" uid="uid://cflhrfmsf0faa" path="res://resources/animations/Global-animations.res" id="2_qfdx3"]
+
+[node name="Gate-Parrent" type="Node2D"]
+
+[node name="Gate" parent="." instance=ExtResource("1_3paph")]
+
+[node name="ParrentAnimationPlayer" type="AnimationPlayer" parent="Gate"]
+libraries = {
+"Global": ExtResource("2_qfdx3")
+}

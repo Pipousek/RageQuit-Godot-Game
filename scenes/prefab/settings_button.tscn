@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://33uwh1dq2no8"]
+
+[ext_resource type="Theme" uid="uid://bsur4k2a8h5e8" path="res://resources/button_default.tres" id="1_phlwx"]
+[ext_resource type="Script" path="res://scripts/settings_button.gd" id="2_vgtu1"]
+[ext_resource type="Texture2D" uid="uid://cqmvf3pq3a80h" path="res://art/settings_gear.png" id="2_y3xis"]
+
+[node name="SettingsButton" type="Button"]
+offset_left = -31.0
+offset_top = -31.0
+offset_right = 94.0
+offset_bottom = 94.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("1_phlwx")
+script = ExtResource("2_vgtu1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 99.0
+offset_bottom = 99.0
+texture = ExtResource("2_y3xis")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

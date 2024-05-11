@@ -1,11 +1,11 @@
 extends Control
 
-func _ready():	
-	SaveLoadState.load_game()	
+func _ready():
+	SaveLoadState.load_game()
 	
-	#$Settings/SettingsPanel/MusicSlider.value = SaveLoadState.get_background_music_level()
+	$Settings/SettingsPanel/MusicSlider.value = SaveLoadState.get_background_music_level()
 	AudioPlayer.play_music_level()
-	#AudioPlayer.set_music_volume($Settings/SettingsPanel/MusicSlider.value)
+	AudioPlayer.set_music_volume($Settings/SettingsPanel/MusicSlider.value)
 	
 	var _levels = _get_list_buttons()
 	#var _complete_levels = SaveLoadState.get_completed_level()
@@ -31,6 +31,21 @@ func _on_level_4_pressed():
 func _on_level_5_pressed():
 	get_tree().change_scene_to_file("res://scenes/level_5.tscn")
 
+func _on_level_6_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_6.tscn")
+
+func _on_level_7_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_7.tscn")
+
+func _on_level_8_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_8.tscn")
+
+func _on_level_9_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_9.tscn")
+
+func _on_level_10_pressed():
+	get_tree().change_scene_to_file("res://scenes/level_10.tscn")
+
 func _get_list_buttons():
 	return [
 		$Level_1,
@@ -46,4 +61,4 @@ func _get_list_buttons():
 	]
 
 func _on_settings_pressed():
-	Settings.show_me()
+	$Settings.show_me()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dhueck8g07su6"]
 
-[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_i1ef6"]
+[ext_resource type="Script" path="res://scripts/level_01.gd" id="1_i1ef6"]
 [ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="2_88ixr"]
 [ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/prefab/player.tscn" id="3_8cys5"]
 [ext_resource type="PackedScene" uid="uid://ds5xwtjbwixmf" path="res://scenes/prefab/fallout_zone.tscn" id="4_3ggor"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="6_u52ls"]
 [ext_resource type="PackedScene" uid="uid://c5temua38dqbd" path="res://scenes/prefab/detect_area.tscn" id="7_frwhj"]
 [ext_resource type="PackedScene" uid="uid://q5v5cu784eqv" path="res://scenes/prefab/escape_button.tscn" id="8_gmjfo"]
-[ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="10_hnm4l"]
+[ext_resource type="PackedScene" uid="uid://53nkgklop38c" path="res://scenes/prefab/settings.tscn" id="9_kvlv0"]
 
 [node name="Level-01" type="Node2D"]
 script = ExtResource("1_i1ef6")
@@ -67,12 +67,17 @@ position = Vector2(1071, 554)
 
 [node name="EscapeButton" parent="." instance=ExtResource("8_gmjfo")]
 
-[node name="SettingsButton" parent="." instance=ExtResource("10_hnm4l")]
-offset_left = 1080.0
-offset_top = 10.0
-offset_right = 1205.0
-offset_bottom = 135.0
+[node name="Settings" parent="." instance=ExtResource("9_kvlv0")]
+visible = false
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 724.0
+offset_top = 49.0
+offset_right = 807.0
+offset_bottom = 105.0
+text = "settings"
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_entered" from="DetectArea2" to="." method="_on_detect_area_2_body_entered"]
 [connection signal="body_entered" from="DetectArea3" to="." method="_on_detect_area_3_body_entered"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
