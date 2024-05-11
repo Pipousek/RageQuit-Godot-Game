@@ -13,8 +13,8 @@ var sawblades
 var sawblade_anim_players
 
 func _ready():
-	for i in range(1):
-		shifts.append(false)
+	shifts.append(false)
+	for i in range(8):
 		sawblade_lock.append(false)
 	
 	sawblades = _get_sawblade_list()

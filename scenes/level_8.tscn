@@ -1,20 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://ob5tk2rkoary"]
+[gd_scene load_steps=11 format=3 uid="uid://ob5tk2rkoary"]
 
-[ext_resource type="PackedScene" uid="uid://crjqsjwl2q87i" path="res://scenes/prefab/gate.tscn" id="1_iamts"]
+[ext_resource type="Script" path="res://scripts/level_8.gd" id="1_nuha0"]
 [ext_resource type="PackedScene" uid="uid://ctmp7o4ijahp2" path="res://scenes/prefab/player.tscn" id="2_0dng0"]
 [ext_resource type="PackedScene" uid="uid://bb80ejp6p3y0w" path="res://scenes/prefab/side_wall.tscn" id="3_ymcnu"]
 [ext_resource type="PackedScene" uid="uid://ds5xwtjbwixmf" path="res://scenes/prefab/fallout_zone.tscn" id="4_i2bog"]
 [ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="5_ms880"]
 [ext_resource type="PackedScene" uid="uid://q5v5cu784eqv" path="res://scenes/prefab/escape_button.tscn" id="6_op7xe"]
 [ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="7_tydwt"]
+[ext_resource type="PackedScene" uid="uid://c5temua38dqbd" path="res://scenes/prefab/detect_area.tscn" id="8_3peiu"]
+[ext_resource type="PackedScene" uid="uid://b2gyb7rup24up" path="res://scenes/prefab/gate_parrent.tscn" id="9_beoqo"]
+[ext_resource type="PackedScene" uid="uid://bo47qdnkp8vql" path="res://scenes/prefab/spikes_parent.tscn" id="9_fikx6"]
 
 [node name="Level_8" type="Node2D"]
-
-[node name="Gate" parent="." instance=ExtResource("1_iamts")]
-position = Vector2(1106, 517)
+script = ExtResource("1_nuha0")
 
 [node name="Player" parent="." instance=ExtResource("2_0dng0")]
-position = Vector2(92, 220)
+position = Vector2(36, 516)
 
 [node name="SideWall" parent="." instance=ExtResource("3_ymcnu")]
 position = Vector2(-17, 338)
@@ -25,10 +26,6 @@ position = Vector2(1169, 338)
 [node name="FalloutZone" parent="." instance=ExtResource("4_i2bog")]
 position = Vector2(578, 684)
 
-[node name="Platform-Parent" parent="." instance=ExtResource("5_ms880")]
-position = Vector2(576, 561)
-scale = Vector2(19.2, 1)
-
 [node name="EscapeButton" parent="." instance=ExtResource("6_op7xe")]
 
 [node name="SettingsButton" parent="." instance=ExtResource("7_tydwt")]
@@ -36,3 +33,32 @@ offset_left = 1080.0
 offset_top = 10.0
 offset_right = 1205.0
 offset_bottom = 135.0
+
+[node name="DetectArea" parent="." instance=ExtResource("8_3peiu")]
+position = Vector2(84, 450)
+
+[node name="DetectArea2" parent="." instance=ExtResource("8_3peiu")]
+position = Vector2(575, 450)
+
+[node name="DetectArea3" parent="." instance=ExtResource("8_3peiu")]
+position = Vector2(995, 450)
+
+[node name="Spikes-Parent" parent="." instance=ExtResource("9_fikx6")]
+position = Vector2(160, 523)
+
+[node name="Spikes-Parent2" parent="." instance=ExtResource("9_fikx6")]
+position = Vector2(995, 523)
+
+[node name="Gate-Parrent" parent="." instance=ExtResource("9_beoqo")]
+position = Vector2(1109, 516)
+
+[node name="Gate-Parrent2" parent="." instance=ExtResource("9_beoqo")]
+position = Vector2(-24, 516)
+
+[node name="Platform-Parent" parent="." instance=ExtResource("5_ms880")]
+position = Vector2(576, 561)
+scale = Vector2(19.2, 1)
+
+[connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_entered" from="DetectArea2" to="." method="_on_detect_area_2_body_entered"]
+[connection signal="body_entered" from="DetectArea3" to="." method="_on_detect_area_3_body_entered"]

@@ -8,9 +8,7 @@ func _ready():
 	AudioPlayer.set_music_volume($Settings/SettingsPanel/MusicSlider.value)
 	
 	var _levels = _get_list_buttons()
-	#var _complete_levels = SaveLoadState.get_completed_level()
-	# TODO: ONLY FOR TESTING REMOVE AFTER
-	var _complete_levels = 10
+	var _complete_levels = SaveLoadState.get_completed_level()
 	for idx in range(_complete_levels + 1, len(_levels)):
 		_levels[idx].disabled = true
 	

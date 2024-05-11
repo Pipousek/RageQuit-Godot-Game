@@ -4,7 +4,7 @@ const CustomAnimations = preload("res://scripts/custom_animations.gd")
 var shifts = []
 
 func _ready():
-	for i in range(5):
+	for i in range(6):
 		shifts.append(false)
 
 func _on_detect_area_body_entered(_body):

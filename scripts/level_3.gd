@@ -11,7 +11,6 @@ func _on_detect_area_body_entered(_body):
 	if shifts[0] == false:
 		shifts[0] = true
 		var platform = $"platform-parent3"
-		print(platform.position)
 		var anim_player = $"platform-parent3/Platform/AnimationPlayer"
 		CustomAnimations.four_key_frames_with_time(platform, anim_player, [0,0,0], [0,-90,0.2], [-90,-90,0.5], [-90,0,1.5])
 		anim_player.connect("animation_finished", CustomAnimations._on_animation_finished.bind(platform))
