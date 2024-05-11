@@ -27,7 +27,7 @@ func _on_music_slider_value_changed(value):
 		$SettingsPanel/ColorRect/AudioSpeaker.frame = 3
 
 func show_me():
-	SaveLoadState.load_game()	
+	SaveLoadState.load_game()
 	
 	$SettingsPanel/MusicSlider.value = SaveLoadState.get_background_music_level()
 	AudioPlayer.play_music_level()
