@@ -1,9 +1,13 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bsur4k2a8h5e8"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://bsur4k2a8h5e8"]
 
 [ext_resource type="Texture2D" uid="uid://bi4ctmjmv5u4h" path="res://art/button_default.png" id="1_3ynol"]
 [ext_resource type="Texture2D" uid="uid://bjgae4k5prjti" path="res://art/button_hover.png" id="1_k5gm5"]
 [ext_resource type="Texture2D" uid="uid://b5vsrh0patouf" path="res://art/button_locked.png" id="1_mfivk"]
 [ext_resource type="Texture2D" uid="uid://cpqaxyyhlat5l" path="res://art/button_pressed.png" id="2_0es0g"]
+[ext_resource type="Texture2D" uid="uid://7dfbydba7n4k" path="res://art/grabber_default.png" id="5_4jnvs"]
+[ext_resource type="Texture2D" uid="uid://cudmm34rjmpun" path="res://art/grabber_disabled.png" id="6_yivin"]
+[ext_resource type="Texture2D" uid="uid://dddmd4eu1gxtf" path="res://art/grabber_highlight.png" id="7_7wlct"]
+[ext_resource type="Texture2D" uid="uid://b3alpkgjdqm7m" path="res://art/tick_default.png" id="8_toc4l"]
 
 [sub_resource type="SystemFont" id="SystemFont_uscg8"]
 
@@ -40,6 +44,15 @@ texture = ExtResource("1_3ynol")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dsfob"]
 texture = ExtResource("2_0es0g")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c61vu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qikhe"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yvmig"]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 30
+
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
@@ -64,3 +77,12 @@ Button/styles/focus = SubResource("StyleBoxFlat_ncj0a")
 Button/styles/hover = SubResource("StyleBoxTexture_q1q6w")
 Button/styles/normal = SubResource("StyleBoxTexture_lt5m3")
 Button/styles/pressed = SubResource("StyleBoxTexture_dsfob")
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("5_4jnvs")
+HSlider/icons/grabber_disabled = ExtResource("6_yivin")
+HSlider/icons/grabber_highlight = ExtResource("7_7wlct")
+HSlider/icons/tick = ExtResource("8_toc4l")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_c61vu")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_qikhe")
+HSlider/styles/slider = SubResource("StyleBoxLine_yvmig")

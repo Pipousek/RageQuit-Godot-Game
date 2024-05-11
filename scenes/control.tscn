@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://btksbksinv6y2"]
+[gd_scene load_steps=6 format=3 uid="uid://btksbksinv6y2"]
 
 [ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_4ms07"]
 [ext_resource type="Texture2D" uid="uid://d20a46p7yq5ij" path="res://art/background_start.png" id="2_6j46o"]
 [ext_resource type="Theme" uid="uid://bsur4k2a8h5e8" path="res://resources/button_default.tres" id="3_66ehd"]
-[ext_resource type="Texture2D" uid="uid://u5ts6yhoujnw" path="res://art/audio_speaker.png" id="5_s7im0"]
-[ext_resource type="Texture2D" uid="uid://b4hmnaxbi4ww8" path="res://art/audio_speaker_disabled.png" id="6_g22vy"]
 
 [sub_resource type="SystemFont" id="SystemFont_7wdhf"]
 
@@ -13,38 +11,6 @@ font = SubResource("SystemFont_7wdhf")
 font_size = 120
 outline_size = 25
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k0wrj"]
-atlas = ExtResource("5_s7im0")
-region = Rect2(0, 0, 733, 643)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0qsc1"]
-atlas = ExtResource("5_s7im0")
-region = Rect2(733, 0, 733, 643)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w0s1u"]
-atlas = ExtResource("5_s7im0")
-region = Rect2(1466, 0, 733, 643)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f6doh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k0wrj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0qsc1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w0s1u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_g22vy")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -162,30 +128,17 @@ offset_bottom = 485.0
 theme = ExtResource("3_66ehd")
 text = "10"
 
-[node name="AudioVolume" type="VSlider" parent="."]
+[node name="SettingsButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1026.0
-offset_top = 304.0
-offset_right = 1042.0
-offset_bottom = 420.0
-value = 30.0
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 998.0
-offset_top = 430.0
-offset_right = 1071.0
-offset_bottom = 495.0
-
-[node name="AudioSpeaker" type="AnimatedSprite2D" parent="ColorRect"]
-position = Vector2(37, 32)
-scale = Vector2(0.1, 0.1)
-sprite_frames = SubResource("SpriteFrames_f6doh")
-frame = 1
+offset_left = 818.0
+offset_top = 521.0
+offset_right = 943.0
+offset_bottom = 608.0
+text = "Settings"
 
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level_2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level_3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Level_4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="Level_5" to="." method="_on_level_5_pressed"]
-[connection signal="value_changed" from="AudioVolume" to="." method="_on_audio_volume_value_changed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_pressed"]

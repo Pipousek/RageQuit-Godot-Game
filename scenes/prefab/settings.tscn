@@ -1,0 +1,146 @@
+[gd_scene load_steps=13 format=3 uid="uid://53nkgklop38c"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_1c5lc"]
+[ext_resource type="Texture2D" uid="uid://7d3u033q7lfc" path="res://art/settings_background.png" id="1_bcldr"]
+[ext_resource type="Theme" uid="uid://bsur4k2a8h5e8" path="res://resources/button_default.tres" id="2_0rlw2"]
+[ext_resource type="Texture2D" uid="uid://u5ts6yhoujnw" path="res://art/audio_speaker.png" id="3_5r121"]
+[ext_resource type="Texture2D" uid="uid://b4hmnaxbi4ww8" path="res://art/audio_speaker_disabled.png" id="4_q0y5j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0miiv"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2isq0"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0wrj"]
+atlas = ExtResource("3_5r121")
+region = Rect2(0, 0, 733, 643)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qsc1"]
+atlas = ExtResource("3_5r121")
+region = Rect2(733, 0, 733, 643)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0s1u"]
+atlas = ExtResource("3_5r121")
+region = Rect2(1466, 0, 733, 643)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckqs2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0wrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qsc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0s1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q0y5j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_68h38"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1c5lc")
+metadata/_edit_vertical_guides_ = [576.0]
+metadata/_edit_horizontal_guides_ = [324.0]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.509804, 0.509804, 0.509804, 0.333333)
+
+[node name="SettingsPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 125.0
+offset_right = 976.0
+offset_bottom = 526.0
+
+[node name="TextureRect" type="TextureRect" parent="SettingsPanel"]
+offset_right = 800.0
+offset_bottom = 400.0
+texture = ExtResource("1_bcldr")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPanel"]
+offset_left = 284.0
+offset_top = 11.0
+offset_right = 517.0
+offset_bottom = 94.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_0miiv")
+
+[node name="MusicLabel" type="Label" parent="SettingsPanel"]
+offset_left = 298.0
+offset_top = 102.0
+offset_right = 501.0
+offset_bottom = 144.0
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_2isq0")
+
+[node name="EffectsLabel" type="Label" parent="SettingsPanel"]
+offset_left = 292.0
+offset_top = 226.0
+offset_right = 508.0
+offset_bottom = 268.0
+text = "Effects Volume"
+label_settings = SubResource("LabelSettings_2isq0")
+
+[node name="EffectsSlider" type="HSlider" parent="SettingsPanel"]
+offset_left = 209.0
+offset_top = 269.0
+offset_right = 594.0
+offset_bottom = 333.0
+theme = ExtResource("2_0rlw2")
+value = 30.0
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel"]
+offset_left = 208.0
+offset_top = 146.0
+offset_right = 593.0
+offset_bottom = 210.0
+theme = ExtResource("2_0rlw2")
+value = 30.0
+
+[node name="ColorRect" type="ColorRect" parent="SettingsPanel"]
+offset_left = 612.0
+offset_top = 144.0
+offset_right = 685.0
+offset_bottom = 209.0
+
+[node name="AudioSpeaker" type="AnimatedSprite2D" parent="SettingsPanel/ColorRect"]
+position = Vector2(37, 32)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ckqs2")
+
+[node name="ExitButton" type="Button" parent="SettingsPanel"]
+offset_left = 752.0
+offset_top = 10.0
+offset_right = 877.0
+offset_bottom = 135.0
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_0rlw2")
+text = "X"
+icon = SubResource("CanvasTexture_68h38")
+
+[connection signal="value_changed" from="SettingsPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="SettingsPanel/ExitButton" to="." method="_on_exit_button_pressed"]

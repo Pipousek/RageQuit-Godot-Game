@@ -1,14 +1,16 @@
 extends Control
 
-func _ready():
+func _ready():	
 	SaveLoadState.load_game()	
 	
-	$AudioVolume.value = SaveLoadState.get_background_music_level()
+	#$Settings/SettingsPanel/MusicSlider.value = SaveLoadState.get_background_music_level()
 	AudioPlayer.play_music_level()
-	AudioPlayer.set_music_volume($AudioVolume.value)
+	#AudioPlayer.set_music_volume($Settings/SettingsPanel/MusicSlider.value)
 	
 	var _levels = _get_list_buttons()
-	var _complete_levels = SaveLoadState.get_completed_level()
+	#var _complete_levels = SaveLoadState.get_completed_level()
+	# TODO: ONLY FOR TESTING REMOVE AFTER
+	var _complete_levels = 10
 	for idx in range(_complete_levels + 1, len(_levels)):
 		_levels[idx].disabled = true
 	
@@ -29,18 +31,6 @@ func _on_level_4_pressed():
 func _on_level_5_pressed():
 	get_tree().change_scene_to_file("res://scenes/level_5.tscn")
 
-func _on_audio_volume_value_changed(value):
-	SaveLoadState.set_background_music_level(value)
-	AudioPlayer.set_music_volume(value)
-	if 33 > value and value > 0:
-		$ColorRect/AudioSpeaker.frame = 2
-	elif 66 > value and value >= 33:
-		$ColorRect/AudioSpeaker.frame = 1
-	elif value >= 66:
-		$ColorRect/AudioSpeaker.frame = 0
-	else:
-		$ColorRect/AudioSpeaker.frame = 3
-
 func _get_list_buttons():
 	return [
 		$Level_1,
@@ -54,3 +44,6 @@ func _get_list_buttons():
 		$Level_9,
 		$Level_10
 	]
+
+func _on_settings_pressed():
+	Settings.show_me()

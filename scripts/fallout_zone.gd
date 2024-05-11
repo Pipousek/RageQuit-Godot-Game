@@ -1,6 +1,6 @@
 extends Area2D
 
-const audio_fallout = preload("res://resources/fallout_enter.mp3")
+const audio_fallout = preload("res://resources/fallout_enter.wav")
 
 func _on_body_entered(_body):
 	AudioPlayer.play_sound_effect(audio_fallout, 0)

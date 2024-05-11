@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 AudioPlayer="*res://scenes/prefab/audio_player.tscn"
 SaveLoadState="*res://scripts/save_load_state.gd"
+Settings="*res://scenes/prefab/settings.tscn"
 
 [display]
 
