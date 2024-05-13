@@ -9,7 +9,7 @@
 #### 2D Pixellated Platform Game
 <img alt="game world" src="./art/RageQuit_QR_code.png" width="35%">
 
-Or click on this [link](shorturl.at/ILP58) - short version (shorturl.at/ILP58)
+Or click on this [link](https://www.shorturl.at/ILP58) - short version (shorturl.at/ILP58)
 
 </div>
 
