@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://53nkgklop38c"]
+[gd_scene load_steps=13 format=3 uid="uid://6kwjblio6rln"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_1c5lc"]
 [ext_resource type="Texture2D" uid="uid://7d3u033q7lfc" path="res://art/settings_background.png" id="1_bcldr"]
@@ -104,18 +104,27 @@ label_settings = SubResource("LabelSettings_2isq0")
 [node name="EffectsLabel" type="Label" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 292.0
-offset_top = 226.0
+offset_top = 212.0
 offset_right = 508.0
-offset_bottom = 268.0
+offset_bottom = 254.0
 text = "Effects Volume"
+label_settings = SubResource("LabelSettings_2isq0")
+
+[node name="FullscreenMode" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 336.0
+offset_right = 488.0
+offset_bottom = 378.0
+text = "Fullscreen Mode:"
 label_settings = SubResource("LabelSettings_2isq0")
 
 [node name="EffectsSlider" type="HSlider" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 269.0
+offset_top = 255.0
 offset_right = 594.0
-offset_bottom = 333.0
+offset_bottom = 319.0
 theme = ExtResource("2_0rlw2")
 value = 30.0
 
@@ -127,6 +136,16 @@ offset_right = 593.0
 offset_bottom = 210.0
 theme = ExtResource("2_0rlw2")
 value = 30.0
+
+[node name="FullscreenButton" type="Button" parent="SettingsPanel"]
+offset_left = 505.0
+offset_top = 332.0
+offset_right = 605.0
+offset_bottom = 432.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("2_0rlw2")
+theme_override_font_sizes/font_size = 30
+text = "OFF"
 
 [node name="ColorRect" type="ColorRect" parent="SettingsPanel"]
 layout_mode = 0
@@ -143,9 +162,9 @@ sprite_frames = SubResource("SpriteFrames_ckqs2")
 [node name="EffectRect" type="ColorRect" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 612.0
-offset_top = 268.0
+offset_top = 254.0
 offset_right = 685.0
-offset_bottom = 333.0
+offset_bottom = 319.0
 
 [node name="EffectSpeaker" type="AnimatedSprite2D" parent="SettingsPanel/EffectRect"]
 position = Vector2(37, 32)
@@ -165,4 +184,5 @@ icon = SubResource("CanvasTexture_68h38")
 
 [connection signal="value_changed" from="SettingsPanel/EffectsSlider" to="." method="_on_effects_slider_value_changed"]
 [connection signal="value_changed" from="SettingsPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="SettingsPanel/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
 [connection signal="pressed" from="SettingsPanel/ExitButton" to="." method="_on_exit_button_pressed"]

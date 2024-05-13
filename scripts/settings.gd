@@ -58,3 +58,11 @@ func _hide_me():
 
 func get_is_showed():
 	return _is_showed
+
+func _on_fullscreen_button_pressed():
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		$SettingsPanel/FullscreenButton.text = "OFF"
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		$SettingsPanel/FullscreenButton.text = "ON"
