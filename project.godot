@@ -13,7 +13,8 @@ config_version=5
 config/name="RageQuit(?)"
 run/main_scene="res://scenes/control.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://art/RageQuit_loading_screen.png"
+config/icon="res://art/RageQuit.png"
 
 [autoload]
 

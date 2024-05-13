@@ -1,10 +1,16 @@
 <div align="center">
 
+<img alt="game world" src="./art/RageQuit_loading_screen.png">
+
+<hr />
+
 # RageQuit(?) - Godot 4.2 Game
 
 #### 2D Pixellated Platform Game
+<img alt="game world" src="./art/RageQuit_QR_code.png" width="35%">
 
-<img alt="game world" src="./art/background_start.png">
+Or click on this [link](shorturl.at/ILP58) - short version (shorturl.at/ILP58)
+
 </div>
 
 ## Summary (One Sentence)
@@ -79,6 +85,8 @@ This game is pixellated so you won't need any high end PC to run this game.
 ### Sound
 
 We use sounds that Donald Trump made to give the game a funny vibe so you don't break your PC so fast. The sounds are from this webside - [Myinstants](https://www.myinstants.com/en/index/us/)
+
+For background music we used Elevator Music from Kevin MacLeod that you can find [here](https://www.youtube.com/watch?v=xy_NKN75Jhw).
 
 ## UI
 

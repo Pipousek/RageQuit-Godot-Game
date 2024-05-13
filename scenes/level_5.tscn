@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5temua38dqbd" path="res://scenes/prefab/detect_area.tscn" id="7_8ujkj"]
 [ext_resource type="PackedScene" uid="uid://dgmrjdh6gjqor" path="res://scenes/prefab/sawblade_parent.tscn" id="8_8lsrc"]
 [ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="9_avojo"]
-[ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="10_fmtt2"]
+[ext_resource type="PackedScene" path="res://scenes/prefab/settings_button.tscn" id="10_fmtt2"]
 
 [node name="Level_05" type="Node2D"]
 script = ExtResource("1_hgks3")

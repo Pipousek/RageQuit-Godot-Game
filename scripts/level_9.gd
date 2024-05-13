@@ -42,7 +42,7 @@ func _on_game_button_2_body_entered(_body):
 		_check_states()
 		_apply_scale_on_player(scales[1])
 
-func _on_game_button_3_body_entered(body):
+func _on_game_button_3_body_entered(_body):
 	if pressed[2] == false:
 		pressed[2] = true
 		_check_states()

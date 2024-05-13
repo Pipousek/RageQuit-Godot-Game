@@ -30,7 +30,7 @@ func _process(_delta):
 	drop_sawblade(sawblades[6], sawblade_anim_players[6], 6, randf_range(min_value, max_value), randf_range(min_second_value, max_second_value))
 	drop_sawblade(sawblades[7], sawblade_anim_players[7], 7, randf_range(min_value, max_value), randf_range(min_second_value, max_second_value))
 
-func _on_detect_area_body_entered(body):
+func _on_detect_area_body_entered(_body):
 	if shifts[0] == false:
 		shifts[0] = true
 		var spikes = $"Spikes-Parent"

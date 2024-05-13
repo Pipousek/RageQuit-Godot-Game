@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://wi1yeq0iuogq" path="res://scenes/prefab/platform_parent.tscn" id="6_u52ls"]
 [ext_resource type="PackedScene" uid="uid://c5temua38dqbd" path="res://scenes/prefab/detect_area.tscn" id="7_frwhj"]
 [ext_resource type="PackedScene" uid="uid://q5v5cu784eqv" path="res://scenes/prefab/escape_button.tscn" id="8_gmjfo"]
-[ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="10_hnm4l"]
+[ext_resource type="PackedScene" path="res://scenes/prefab/settings_button.tscn" id="10_hnm4l"]
 
 [node name="Level-01" type="Node2D"]
 script = ExtResource("1_i1ef6")

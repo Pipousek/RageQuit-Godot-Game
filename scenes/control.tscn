@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/user_interface.gd" id="1_4ms07"]
 [ext_resource type="Texture2D" uid="uid://d20a46p7yq5ij" path="res://art/background_start.png" id="2_6j46o"]
 [ext_resource type="Theme" uid="uid://bsur4k2a8h5e8" path="res://resources/button_default.tres" id="3_66ehd"]
-[ext_resource type="PackedScene" uid="uid://33uwh1dq2no8" path="res://scenes/prefab/settings_button.tscn" id="4_lclfl"]
-[ext_resource type="PackedScene" uid="uid://53nkgklop38c" path="res://scenes/prefab/settings.tscn" id="6_jq7v2"]
+[ext_resource type="PackedScene" path="res://scenes/prefab/settings_button.tscn" id="4_lclfl"]
+[ext_resource type="PackedScene" path="res://scenes/prefab/settings.tscn" id="6_jq7v2"]
 
 [sub_resource type="SystemFont" id="SystemFont_7wdhf"]
 
