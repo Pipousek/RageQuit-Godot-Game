@@ -1,6 +1,6 @@
 extends Node
 
-var save_filename = "user://ragequit_game_state.txt"
+var save_filename = "user://ragequit_game_state.save"
 
 var _completed_level
 var _background_music_level
